@@ -52,7 +52,7 @@ honeypot_ml_project/
  1. Clone Repository
 
 bash
-git clone https://github.com/your-username/honeypot_ml_project.git
+git clone https://github.com/GeddaSuryaTejaswani/honeypot.git
 cd honeypot_ml_project
 
 
@@ -90,7 +90,7 @@ http://127.0.0.1:5000/dashboard
 
 🧪 Example Commands
 
-### Normal
+ Normal
 
 dir
 whoami
