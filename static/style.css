@@ -1,0 +1,42 @@
+body{
+
+background:#012456;
+color:white;
+font-family:Consolas;
+text-align:center;
+
+}
+
+.terminal {
+
+    width:700px;
+    margin:auto;
+    padding:20px;
+    background:black;
+    color:#00ff00;
+    font-family:Consolas;
+    text-align:left;
+    border-radius:10px;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+input{
+
+width:80%;
+padding:8px;
+background:#012456;
+color:white;
+border:1px solid white;
+
+}
+
+button{
+
+padding:8px 15px;
+background:white;
+color:black;
+
+}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>Fake Windows Honeypot</h2>
+
+<div class="terminal">
+
+<p>Microsoft Windows [Version 10.0]</p>
+<p>(c) Microsoft Corporation. All rights reserved.</p>
+
+<!-- Show previous command -->
+{% if command %}
+<p>C:\Users\Admin>{{command}}</p>
+{% endif %}
+
+<!-- Show output -->
+{% if output %}
+<pre>{{output}}</pre>
+{% endif %}
+
+<!-- Show ML prediction -->
+{% if prediction %}
+<p style="color:yellow;">{{prediction}}</p>
+{% endif %}
+
+<!-- Input -->
+<form action="/command" method="post">
+
+<input type="text" name="command" placeholder="Enter command" autofocus>
+
+<button type="submit">Run</button>
+
+</form>
+
+</div>
+
+<br>
+
+<a href="/dashboard">Open Dashboard</a>
+
+{% endblock %}

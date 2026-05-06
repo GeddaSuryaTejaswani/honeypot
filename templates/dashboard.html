@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Honeypot Security Dashboard</h1>
+
+<p>Total Interactions: {{ total }}</p>
+<p>Total Attacks: {{ attacks }}</p>
+<p>Normal Users: {{ normal }}</p>
+
+<h3>Top Commands</h3>
+<ul>
+{% for cmd,count in commands.items() %}
+<li>{{cmd}} : {{count}}</li>
+{% endfor %}
+</ul>
+
+<h3>Top Attacker IPs</h3>
+<ul>
+{% for ip,count in ips.items() %}
+<li>{{ip}} : {{count}}</li>
+{% endfor %}
+</ul>
+
+<h3>Attack Visualization</h3>
+
+<canvas id="attackChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const chartData = JSON.parse('{{ [attacks, normal] | tojson | safe }}');
+
+const ctx = document.getElementById('attackChart').getContext('2d');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Attack', 'Normal'],
+        datasets: [{
+            label: 'Traffic',
+            data: chartData
+        }]
+    }
+});
+</script>
+
+<br>
+<a href="/">Back to System</a>
+
+{% endblock %}
